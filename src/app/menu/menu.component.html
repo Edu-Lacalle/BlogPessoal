@@ -6,13 +6,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
                 <li class="nav-item">
-                    <img src="https://yt3.ggpht.com/ytc/AAUvwnhkZjfj3AhZNOvbxzIzVLTKZZHGLAlIHVstuYx1=s900-c-k-c0x00ffffff-no-rj" alt="imagem do usuario" width="50px" height="50px" class="img-fluid rounded-circle">
+                    <img src="{{foto}}" alt="imagem do usuario" width="50px" height="50px" class="img-fluid rounded-circle">
                 </li>
-                <li class="nav-item ps-2 pe-2">
-                    <b class="m-0 text-white fs-16">Nome do Usuário</b>
+                <li class="nav-item pl-2 pr-2">
+                    <b class="m-0 text-white fs-16">{{nome}}</b>
                 </li>
 
-                <li class="nav-item ps-2 pe-2">
+                <li class="nav-item ps-3 pe-3">
                     <a href="">
                         <p class=" fs-16 text-white m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
                     </a>
@@ -20,7 +20,7 @@
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0 d-flex align-items-center">
                 <li class="nav-item ps-2 pe-2">
-                    <a href="" class="m-0 text-white font-weight-bold fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    <a (click)='sair()' class="m-0 text-white font-weight-bold fs-16">Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
                 </li>
             </ul>
         </div>
