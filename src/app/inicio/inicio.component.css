@@ -5,3 +5,11 @@
 .fs-18 {
     font-size: 18pt;
 }
+
+.cor {
+    background-color: red
+}
+
+.cor:hover {
+    background-color: white
+}
