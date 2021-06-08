@@ -33,7 +33,7 @@ token = environment.token
   ) { }
 
   ngOnInit(){
-  
+    window.scroll(0,0)
     if (environment.token == '') {
       this.router.navigate(['/entrar'])
       alert('Sua sessão expirou,faça o login novamente')

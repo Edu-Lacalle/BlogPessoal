@@ -24,6 +24,9 @@ return this.http.post<UserLogin>('https://bloglacalle.herokuapp.com/usuarios/log
     return this.http.post<User>('https://bloglacalle.herokuapp.com/usuarios/cadastrar', user)
   }
 
+  atualizar(user:User):Observable<User>{
+    return this.http.put<User>('https://bloglacalle.herokuapp.com/usuarios', user)
+}
   getByIdUser(id : number):Observable<User>{ 
     return this.http.get<User>(`https://bloglacalle.herokuapp.com/usuarios/${id}`, this.token)
   }
