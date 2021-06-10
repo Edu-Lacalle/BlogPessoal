@@ -37,6 +37,15 @@
     </nav>
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+
+            <div class="row d-flex justify-content-center mt-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="titulo" placeholder="Digite um Título a pesquisar" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
+                    </div>
+                </div>
+            </div>
+
             <div class="card-columns">
                 <div class="card border-secondary mb-3 mt-5" style="max-width: 18rem;" *ngFor='let i of listaPostagem |orderBy: key : reverse'>
                     <div class="card-body text-secondary">
@@ -52,6 +61,9 @@
 
 
         <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+
+
+
             <div class="card-columns">
                 <div class="card border-secondary mb-3 mt-5" style="max-width: 18rem;" *ngFor='let i of user.postagem |orderBy: key : reverse'>
                     <div class="card-body text-secondary">
@@ -69,6 +81,15 @@
 
 
         <div class="tab-pane fade" id="postagenTema" role="tabpanel" aria-labelledby="nav-postagenTema-tab">
+
+            <div class="row d-flex justify-content-center mt-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="titulo" placeholder="Digite um Tema a pesquisar" [(ngModel)]='nomeTema' (keyup)='findByNomeTema()'>
+                    </div>
+                </div>
+            </div>
+
             <div class="card-columns" *ngFor='let tema of listaTemas'>
                 <div class="card border-secondary mb-3 mt-5" style="max-width: 18rem;" *ngFor='let i of tema.postagem |orderBy: key : reverse'>
                     <div class="card-body text-secondary">
@@ -98,8 +119,8 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="titulo">Título</label>
-                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulo" placeholder="Digite o titulo">
+                    <label for="titulomodal">Título</label>
+                    <input [(ngModel)]='postagem.titulo' type="text" class="form-control" id="titulomodal" placeholder="Digite o titulo">
                 </div>
 
                 <div class="form-group">

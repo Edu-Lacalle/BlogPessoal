@@ -22,6 +22,8 @@ export class InicioComponent implements OnInit {
   tema:Tema=new Tema
   listaTemas:Tema[]
   idTema:number
+  tituloPost:string
+  nomeTema:string
 
   user:User=new User
   idUser = environment.id
@@ -76,19 +78,38 @@ export class InicioComponent implements OnInit {
   
   
   
-publicar(){
-this.tema.id=this.idTema
-this.postagem.tema = this.tema
+  publicar(){
+    this.tema.id = this.idTema
+    this.postagem.tema = this.tema
 
-this.user.id = this.idUser
-this.postagem.usuario = this.user
+    this.user.id = this.idUser
+    this.postagem.usuario = this.user
 
-this.postagemService.postPostagem(this.postagem).subscribe((resp:Postagem)=>{
-  this.postagem = resp
-  this.alertas.showAlertSuccess('postagem realizada com sucesso!')
-  this.postagem= new Postagem
-  this.getAllPostagens()
-})
-}
+    this.postagemService.postPostagem(this.postagem).subscribe((resp:Postagem)=>{
+      this.postagem = resp
+      this.alertas.showAlertSuccess('postagem realizada com sucesso!')
+      this.postagem = new Postagem
+      this.getAllPostagens()
+    })
+  }
+  findByTituloPostagem(){
+    if(this.tituloPost==''){
+      this.getAllPostagens()
+    }else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp:Postagem[])=>{
+        this.listaPostagem = resp
+      })
+    }
+  }
+
+  findByNomeTema(){
+    if(this.nomeTema==''){
+      this.getAllPostagens()
+    }else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp:Tema[])=>{
+        this.listaTemas = resp
+      })
+    }
+  }
 
 }
